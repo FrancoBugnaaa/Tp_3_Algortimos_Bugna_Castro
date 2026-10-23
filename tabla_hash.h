@@ -26,6 +26,15 @@ class TablaHash {
     // COMPLETAR: la representacion la eligen ustedes (que guardan, y que hay
     // en cada bucket). Pueden agregar tambien funciones auxiliares privadas.
     // Lo que el Iterador necesite de aca tiene que estar declarado antes que el.
+    struct Nodo{
+        K clave;
+        V valor;
+        Nodo* sig;
+    };
+
+    Nodo** buckets;
+    size_t n;
+    size_t c;
 
   public:
     static const size_t FACTOR_DE_CARGA_MAXIMO = 2;
@@ -134,12 +143,28 @@ class TablaHash {
 
 template <typename K, typename V>
 TablaHash<K, V>::TablaHash(size_t capacidad_inicial) {
-    // COMPLETAR
+    n = 0;
+    c = capacidad_inicial;
+
+    buckets = new Nodo*[c];
+
+    for (size_t i = 0; i < c; i++){
+        buckets[i] = nullptr;
+    }
 }
 
 template <typename K, typename V>
 TablaHash<K, V>::~TablaHash() {
-    // COMPLETAR
+    for(size_t i = 0; i < c; i ++){
+        Nodo* act = buckets[i];
+
+        while (act != nullptr){
+            Nodo * siguiente = act->sig;
+            delete act;
+            act = siguiente;
+        }   
+    }
+    delete[] buckets;
 }
 
 template <typename K, typename V>

@@ -1,11 +1,18 @@
 #include "funcion_hash.h"
 
 size_t funcion_hash(const std::string& clave) {
-    // COMPLETAR
-    return 0;
+    size_t hash = 0;
+
+    for (int i = 0; i < clave.size(); i ++){
+        hash = hash * 23 + clave[i]; // arranca en el valor de la letra segun ASCII
+    }
+
+    return hash;
 }
 
 size_t funcion_hash(int clave) {
-    // COMPLETAR
-    return 0;
+    size_t hash = static_cast<size_t>(clave); // Le saco el signo
+    hash = (hash ^ (hash >> 16)) * 2654435761u; // combino mediante un XOR y desplazo los bits 16 na la derecha y lugo multiplico por cte
+    return hash;
 }
+// 2654435761 es el numero y la u es de unsigned
