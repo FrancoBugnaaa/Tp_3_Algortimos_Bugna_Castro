@@ -15,7 +15,14 @@
 //   - V: se puede copiar.
 //
 // Invariante de representacion:
-//   COMPLETAR: escriban aca el invariante de la representacion que elijan.
+// c >= 1.
+// buckets apunta a un arreglo de c punteros a Nodo.
+// Cada bucket contiene una lista enlazada sin ciclos.
+// Cada clave se encuentra en el bucket
+// funcion_hash(clave) % c.
+// No hay claves repetidas en la tabla.
+// n representa la cantidad total de nodos almacenados.
+// n <= FACTOR_DE_CARGA_MAXIMO * c.
 //
 // Complejidades: n es la cantidad de claves guardadas y c la capacidad.
 // "Promedio" supone que la funcion de hash reparte las claves de manera
