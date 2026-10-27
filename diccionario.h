@@ -118,7 +118,7 @@ void Diccionario<K, V>::insertar(const K& clave, const V& valor) {
 
     // COMPLETAR
 
-    tabla.insertar(clave, valor)   
+    tabla.insertar(clave, valor); 
 }
 
 template <typename K, typename V>

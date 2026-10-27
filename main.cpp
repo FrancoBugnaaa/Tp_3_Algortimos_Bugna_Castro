@@ -11,18 +11,26 @@ const bool CON_LISTADOS = false;
 //
 // Uso: ./goleadores < datos/ejemplo.txt
 int main() {
+
     // COMPLETAR: crear la estructura donde se van a cargar los goles.
+
+    Goleadores goleadores_del_mundial;
 
     std::string jugador;
     while (std::getline(std::cin, jugador)) {
         if (jugador != "") {
             // En este punto, jugador tiene el nombre de quien hizo el gol.
             // COMPLETAR: anotarle el gol.
+
+            goleadores_del_mundial.anotar_gol(jugador);
         }
     }
 
     // COMPLETAR: imprimir, con el formato del enunciado, la cantidad de
     // jugadores con goles y el maximo goleador (con sus goles).
+
+    std:: cout << "Jugadores con goles: " << goleadores_del_mundial.cantidad_de_jugadores() << std::endl;
+    std:: cout << "Maximo goleador: " << goleadores_del_mundial.maximo_goleador() << " (" << goleadores_del_mundial.goles(goleadores_del_mundial.maximo_goleador()) << " goles)" << std:: endl;
 
     if (CON_LISTADOS) {
         std::cout << std::endl;
