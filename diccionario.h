@@ -148,7 +148,6 @@ V Diccionario<K, V>::obtener(const K& clave) {
     // COMPLETAR
                
     return *(tabla.buscar(clave));  
-    
 }
 
 template <typename K, typename V>
@@ -157,7 +156,6 @@ void Diccionario<K, V>::eliminar(const K& clave) {
     // COMPLETAR
 
     tabla.eliminar(clave);
-
 }
 
 template <typename K, typename V>
@@ -166,7 +164,6 @@ size_t Diccionario<K, V>::cantidad() {
     // COMPLETAR
 
     return tabla.cantidad();
-
 }
 
 // El "typename" le avisa al compilador que Diccionario<K, V>::Iterador es un
