@@ -35,10 +35,17 @@ int main() {
     if (CON_LISTADOS) {
         std::cout << std::endl;
         std::cout << "Goleadores por nombre:" << std::endl;
+
         // OPTATIVO: imprimir el listado por nombre.
+
+        goleadores_del_mundial.imprimir_por_nombre();
+
         std::cout << std::endl;
         std::cout << "Goleadores por goles:" << std::endl;
+
         // OPTATIVO: imprimir el listado por goles.
+
+        goleadores_del_mundial.imprimir_por_goles();
     }
 
     return 0;

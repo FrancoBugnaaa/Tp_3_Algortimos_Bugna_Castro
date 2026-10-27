@@ -3,6 +3,8 @@
 
 #include <cstddef>
 #include <string>
+#include <vector>  // Incluimos <vector> para las dos funciones optativas finales.
+                   // (Las funciones auxiliares creadas están agregadas en la sección private de la clase).
 
 #include "diccionario.h"
 
@@ -23,6 +25,9 @@ class Goleadores {
   private:
     Diccionario<std::string, int> goles_por_jugador;
     std::string maximo;
+
+    void unir_nombres(std::vector<std::string>&arr, int izquierda, int medio, int derecha);
+    void merge_sort_nombres_goleadores(std::vector<std::string>&arr, int izquierda, int derecha);
 
   public:
     // Pre:  -

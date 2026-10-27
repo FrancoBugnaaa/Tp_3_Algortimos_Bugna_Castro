@@ -61,10 +61,93 @@ std::string Goleadores::maximo_goleador() {
     
 }
 
+// FUNCIONES AUXILIARES PARA LA PARTE OPTATIVA DE LA FUNCIÓN "imprimir_por_nombre()":
+
+void Goleadores::unir_nombres(std::vector<std::string>& arr, int izquierda, int medio, int derecha) { 
+
+    int mitad_1 = medio - izquierda  + 1;
+    int mitad_2 = derecha - medio;
+
+    std::vector<std::string> izq(mitad_1);
+    std::vector<std::string> der(mitad_2);
+
+    for (int i = 0; i < mitad_1; i++) {
+        izq[i] = arr[izquierda + 1];
+    }
+
+    for (int j = 0; j < mitad_2; j++){
+        der[j] = arr[medio + 1 + j];
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = izquierda;
+
+    while (i < mitad_1 and j < mitad_2) {
+        if (izq[i] <= der[j]) {
+            arr[k] = izq[i];
+            i++;
+        }
+
+        else {
+            arr[k] = der[j];
+            j++;
+        }
+
+        k++;
+    }
+
+    while (i < mitad_1) {
+        arr[k] = izq[i];
+        i++;
+        k++;
+    }
+
+    while (j < mitad_2) {
+        arr[k] = der[j];
+        j++;
+        k++;
+    }
+}
+
+void Goleadores::merge_sort_nombres_goleadores(std::vector<std::string>& arr, int izquierda, int derecha) {
+    if (izquierda < derecha) {
+        int medio = izquierda + (derecha - izquierda) / 2;
+
+        merge_sort_nombres_goleadores(arr, izquierda, medio);
+        merge_sort_nombres_goleadores(arr, medio + 1, derecha);
+    }
+}
+
 void Goleadores::imprimir_por_nombre() {
+
     // OPTATIVO
+
+    size_t cantidad_jugadores = cantidad_de_jugadores();
+    if (cantidad_jugadores == 0) {
+        return;
+    }
+
+    std::vector<std::string> jugadores;
+    Diccionario<std::string, int>::Iterador it = goles_por_jugador.crear_iterador();
+
+    while (it.hay_mas() == true) {
+        jugadores.push_back(it.clave());
+        it.avanzar();
+    }
+
+    merge_sort_nombres_goleadores(jugadores, 0, jugadores.size() - 1);
+
+    for (const std::string& jugador : jugadores) {
+        std::cout << jugador <<": " << goles(jugador) << std::endl;
+    }
+
+
 }
 
 void Goleadores::imprimir_por_goles() {
+
     // OPTATIVO
+
+    
 }
