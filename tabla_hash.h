@@ -119,7 +119,7 @@ class TablaHash {
         // Post: devuelve la clave del par actual, sin modificar el iterador.
         // Costo: O(1).
         K clave() {
-            return act->valor;
+            return act->clave;
         }
 
         // Pre:  hay_mas().

@@ -71,16 +71,20 @@ class Diccionario {
         // Post: indica si quedan asociaciones por recorrer.
         // Costo: O(1).
         bool hay_mas() {
+
             // COMPLETAR
-            return false;
+
+            return de_la_tabla.hay_mas();
         }
 
         // Pre:  hay_mas().
         // Post: devuelve la clave actual, sin modificar el iterador.
         // Costo: O(1).
         K clave() {
+
             // COMPLETAR (reemplazar la linea de abajo)
-            return K();
+
+            return de_la_tabla.clave();
         }
 
         // Pre:  hay_mas().
@@ -88,8 +92,10 @@ class Diccionario {
         //       el iterador.
         // Costo: O(1).
         V valor() {
+
             // COMPLETAR (reemplazar la linea de abajo)
-            return V();
+            
+            return de_la_tabla.valor();
         }
 
         // Pre:  hay_mas().
@@ -97,7 +103,10 @@ class Diccionario {
         // Costo: O(c) en peor caso. Recorrer el diccionario entero cuesta
         //        O(n + c).
         void avanzar() {
+
             // COMPLETAR
+
+            return de_la_tabla.avanzar();
         }
     };
 
