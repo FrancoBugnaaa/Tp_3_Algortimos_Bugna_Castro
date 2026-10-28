@@ -207,6 +207,8 @@ void TablaHash<K, V>::insertar(const K& clave, const V& valor) {
                 Nodo* sig = act->sig;
 
                 size_t pos = funcion_hash(act->clave) % nuevaCapacidad;
+                
+                act->sig = nuevosBuckets[pos];
                 nuevosBuckets[pos] = act;
 
                 act = sig;
@@ -233,7 +235,7 @@ void TablaHash<K, V>::eliminar(const K& clave) {
     Nodo* act = buckets[pos];
     Nodo * prev = nullptr;
 
-    while (act != nullptr && act->clave != clave){
+    while (act != nullptr && !(act->clave == clave)){
         prev = act;
         act = act->sig;
     }
@@ -253,7 +255,7 @@ V* TablaHash<K, V>::buscar(const K& clave) {
     size_t pos = funcion_hash(clave) % c;
     Nodo* act = buckets[pos];
 
-    while (act != nullptr && act->clave != clave){
+    while (act != nullptr && !(act->clave == clave)){
         act = act->sig;
     }
     
