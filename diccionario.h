@@ -127,7 +127,17 @@ void Diccionario<K, V>::insertar(const K& clave, const V& valor) {
 
     // COMPLETAR
 
-    tabla.insertar(clave, valor); 
+    V* clave_a_agregar = tabla.buscar(clave);  
+
+    if (clave_a_agregar != nullptr) {   // Verificamos si la clave a insertar ya se encontraba en el diccionario.
+
+        *clave_a_agregar = valor;  // Actualizamos el valor vinculado a la clave.
+    }
+
+    else {
+        tabla.insertar(clave, valor);
+    }
+
 }
 
 template <typename K, typename V>
@@ -178,5 +188,5 @@ typename Diccionario<K, V>::Iterador Diccionario<K, V>::crear_iterador() {
 
     return it;
 }
-
+ 
 #endif

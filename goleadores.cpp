@@ -72,7 +72,7 @@ void Goleadores::unir_nombres(std::vector<std::string>& arr, int izquierda, int 
     std::vector<std::string> der(mitad_2);
 
     for (int i = 0; i < mitad_1; i++) {
-        izq[i] = arr[izquierda + 1];
+        izq[i] = arr[izquierda + i];
     }
 
     for (int j = 0; j < mitad_2; j++){
@@ -111,11 +111,14 @@ void Goleadores::unir_nombres(std::vector<std::string>& arr, int izquierda, int 
 }
 
 void Goleadores::merge_sort_nombres_goleadores(std::vector<std::string>& arr, int izquierda, int derecha) {
+
     if (izquierda < derecha) {
         int medio = izquierda + (derecha - izquierda) / 2;
 
         merge_sort_nombres_goleadores(arr, izquierda, medio);
         merge_sort_nombres_goleadores(arr, medio + 1, derecha);
+
+        unir_nombres(arr, izquierda, medio, derecha);
     }
 }
 
@@ -141,13 +144,87 @@ void Goleadores::imprimir_por_nombre() {
     for (const std::string& jugador : jugadores) {
         std::cout << jugador <<": " << goles(jugador) << std::endl;
     }
-
-
 }
 
+void Goleadores::unir_goles(std::vector<std::pair<std::string, int>>& arr, int izquierda, int medio, int derecha) {
+
+    int mitad_1 = medio - izquierda  + 1;
+    int mitad_2 = derecha - medio;
+
+    std::vector<std::pair<std::string, int>> izq(mitad_1);
+    std::vector<std::pair<std::string, int>> der(mitad_2);
+
+    for (int i = 0; i < mitad_1; i++) {
+        izq[i] = arr[izquierda + i];
+    }
+
+    for (int j = 0; j < mitad_2; j++){
+        der[j] = arr[medio + 1 + j];
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = izquierda;
+
+    while (i < mitad_1 and j < mitad_2) {
+        if (izq[i].second > der[j].second or (izq[i].second == der[j].second and izq[i].first <= der[j].first)) {
+            arr[k] = izq[i];
+            i++;
+        }
+
+        else {
+            arr[k] = der[j];
+            j++;
+        }
+
+        k++;
+    }
+
+    while (i < mitad_1) {
+        arr[k] = izq[i];
+        i++;
+        k++;
+    }
+
+    while (j < mitad_2) {
+        arr[k] = der[j];
+        j++;
+        k++;
+    }
+}
+
+void Goleadores::merge_sort_goles(std::vector<std::pair<std::string, int>>& arr, int izquierda, int derecha) {
+
+    if (izquierda < derecha) {
+        int medio = izquierda + (derecha - izquierda) / 2;
+
+        merge_sort_goles(arr, izquierda, medio);
+        merge_sort_goles(arr, medio + 1, derecha);
+
+        unir_goles(arr, izquierda, medio, derecha);
+    }
+}
+    
 void Goleadores::imprimir_por_goles() {
 
     // OPTATIVO
 
-    
+    size_t cantidad_jugadores = cantidad_de_jugadores();
+        if (cantidad_jugadores == 0) {
+            return; 
+        }
+
+        std::vector<std::pair<std::string, int>> jugadores_goles;
+        Diccionario<std::string, int>::Iterador it = goles_por_jugador.crear_iterador();
+
+        while (it.hay_mas()) {
+            jugadores_goles.push_back({it.clave(), it.valor()});
+            it.avanzar();
+        }
+
+        merge_sort_goles(jugadores_goles, 0, jugadores_goles.size() - 1);
+
+        for (const auto& par : jugadores_goles) {
+            std::cout << par.first << ": " << par.second << std::endl;
+        }
 }

@@ -4,7 +4,7 @@
 #include "goleadores.h"
 
 // Cambiar a true si hicieron la parte optativa (los dos listados).
-const bool CON_LISTADOS = false;
+const bool CON_LISTADOS = true;
 
 // Lee de la entrada estandar la lista de goles del grupo (un gol por linea:
 // el nombre del jugador que lo hizo) e imprime el resumen.

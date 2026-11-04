@@ -28,6 +28,8 @@ class Goleadores {
 
     void unir_nombres(std::vector<std::string>&arr, int izquierda, int medio, int derecha);
     void merge_sort_nombres_goleadores(std::vector<std::string>&arr, int izquierda, int derecha);
+    void unir_goles(std::vector<std::pair<std::string, int>>& arr, int izquierda, int medio, int derecha);
+    void merge_sort_goles(std::vector<std::pair<std::string, int>>& arr, int izquierda, int derecha);
 
   public:
     // Pre:  -
