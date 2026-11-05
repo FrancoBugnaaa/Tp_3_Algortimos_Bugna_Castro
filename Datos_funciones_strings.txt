@@ -1,0 +1,29 @@
+Se probaron tres funciones de hash diferentes sobre el archivo de datos del Mundial de 1978, que contiene 60 jugadores distintos. Cada función fue evaluada con capacidades iniciales de 8 y 10 buckets.
+
+| Función         | Capacidad inicial | Capacidad final | Colisiones |
+| Longitud        | 8                 | 32              | 43         |
+| Longitud        | 10                | 40              | 43         |
+| Suma ASCII      | 8                 | 32              | 33         |
+| Suma ASCII      | 10                | 40              | 27         |
+| Polinómica × 23 | 8                 | 32              | 34         |
+| Polinómica × 23 | 10                | 40              | 34         |
+
+# Análisis de resultados
+
+La función basada en la longitud tuvo una mayor cantidad de colisiones, ya que los jugadores cuyos nombres tienen la misma cantidad de caracteres generan el mismo hash.
+
+La función basada en la suma de valores ASCII presentó mejores resultados, especialmente con capacidad inicial 10. Pero tiene la misma limitación de que las claves que contienen los mismos caracteres en distinto orden generan el mismo hash.
+
+La función polinómica multiplica el valor acumulado por 23 antes de sumar cada carácter, por lo que tiene en cuenta el orden de las letras. En nuestras pruebas produjo 34 colisiones para ambas capacidades iniciales.
+
+# Función elegida
+
+Elegimos la función polinómica con multiplicador 23 porque utiliza tanto el valor de los caracteres como su orden. 
+
+# Influencia de la capacidad
+
+Las capacidades iniciales de 8 y 10 generaron capacidades finales de 32 y 40, respectivamente.
+
+Al comparar una capacidad final que es potencia de 2 (32) con otra que no lo es (40), observamos que la función de longitud y la polinómica mantuvieron la misma cantidad de colisiones. En cambio, la suma ASCII disminuyó de 33 a 27 colisiones.
+
+Por lo tanto, la capacidad influye en la distribución de algunas funciones, pero utilizar una potencia de 2 no garantiza por sí solo menos colisiones.

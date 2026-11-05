@@ -1,14 +1,23 @@
 #include "funcion_hash.h"
+/*
+size_t funcion_hash(const std::string& clave) { //Baja
+    return clave.size();
+}
 
-size_t funcion_hash(const std::string& clave) {
+
+size_t funcion_hash(const std::string& clave) { //Media
     size_t hash = 0;
- 
-    for (size_t i = 0; i < clave.size(); i ++){  // Definimos que la variable "i" sea un entero sin signo para que no entre en conflicto
-                                                 // con la comparación.
-                                                 
+    for (size_t i = 0; i < clave.size(); i++) {
+        hash += clave[i];
+    }
+    return hash;
+}
+*/
+size_t funcion_hash(const std::string& clave) { //Alta
+    size_t hash = 0;
+    for (size_t i = 0; i < clave.size(); i ++){  // Definimos que la variable "i" sea un entero sin signo para que no entre en conflicto con la comparación.                                        
         hash = hash * 23 + clave[i]; // arranca en el valor de la letra segun ASCII
     }
-
     return hash;
 }
 
