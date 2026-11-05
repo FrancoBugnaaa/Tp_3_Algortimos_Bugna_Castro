@@ -1,0 +1,126 @@
+Jugadores con goles: 60
+Maximo goleador: Mario Kempes (6 goles)
+
+Goleadores por nombre:
+Alberto Tarantini: 1
+Ali Kaabi: 1
+Andras Toth: 1
+Andrzej Szarmach: 1
+Archie Gemmill: 2
+Arie Haan: 2
+Arturo Vazquez Ayala: 1
+Bernard Lacombe: 1
+Bernd Holzenbein: 1
+Cesar Cueto: 1
+Christian Lopez: 1
+Dani: 1
+Daniel Bertoni: 2
+Daniel Passarella: 1
+Dick Nanninga: 1
+Dieter Muller: 2
+Dirceu: 3
+Dominique Rocheteau: 1
+Erich Obermayer: 1
+Ernie Brandts: 2
+Franco Causio: 1
+Grzegorz Lato: 2
+Hans Krankl: 4
+Hansi Muller: 1
+Hassan Roshan: 1
+Heinz Flohe: 2
+Iraj Danaeifard: 1
+Joe Jordan: 1
+Johnny Rep: 3
+Jose Velasquez: 1
+Juan Manuel Asensi: 1
+Karl-Heinz Rummenigge: 3
+Karoly Csapo: 1
+Kazimierz Deyna: 1
+Kenny Dalglish: 1
+Leopoldo Luque: 4
+Marc Berdoll: 1
+Mario Kempes: 6
+Michel Platini: 1
+Mokhtar Dhouib: 1
+Nejib Ghommidh: 1
+Nelinho: 2
+Paolo Rossi: 3
+Reinaldo: 1
+Renato Zaccarelli: 1
+Rene Houseman: 1
+Rene van de Kerkhof: 1
+Rob Rensenbrink: 5
+Roberto Bettega: 2
+Roberto Dinamite: 3
+Romeo Benetti: 1
+Rudiger Abramczik: 1
+Sandor Zombori: 1
+Teofilo Cubillas: 5
+Thomas Sjoberg: 1
+Victor Rangel: 1
+Walter Schachner: 1
+Willy van de Kerkhof: 1
+Zbigniew Boniek: 2
+Zico: 1
+
+Goleadores por goles:
+Mario Kempes: 6
+Rob Rensenbrink: 5
+Teofilo Cubillas: 5
+Hans Krankl: 4
+Leopoldo Luque: 4
+Dirceu: 3
+Johnny Rep: 3
+Karl-Heinz Rummenigge: 3
+Paolo Rossi: 3
+Roberto Dinamite: 3
+Archie Gemmill: 2
+Arie Haan: 2
+Daniel Bertoni: 2
+Dieter Muller: 2
+Ernie Brandts: 2
+Grzegorz Lato: 2
+Heinz Flohe: 2
+Nelinho: 2
+Roberto Bettega: 2
+Zbigniew Boniek: 2
+Alberto Tarantini: 1
+Ali Kaabi: 1
+Andras Toth: 1
+Andrzej Szarmach: 1
+Arturo Vazquez Ayala: 1
+Bernard Lacombe: 1
+Bernd Holzenbein: 1
+Cesar Cueto: 1
+Christian Lopez: 1
+Dani: 1
+Daniel Passarella: 1
+Dick Nanninga: 1
+Dominique Rocheteau: 1
+Erich Obermayer: 1
+Franco Causio: 1
+Hansi Muller: 1
+Hassan Roshan: 1
+Iraj Danaeifard: 1
+Joe Jordan: 1
+Jose Velasquez: 1
+Juan Manuel Asensi: 1
+Karoly Csapo: 1
+Kazimierz Deyna: 1
+Kenny Dalglish: 1
+Marc Berdoll: 1
+Michel Platini: 1
+Mokhtar Dhouib: 1
+Nejib Ghommidh: 1
+Reinaldo: 1
+Renato Zaccarelli: 1
+Rene Houseman: 1
+Rene van de Kerkhof: 1
+Romeo Benetti: 1
+Rudiger Abramczik: 1
+Sandor Zombori: 1
+Thomas Sjoberg: 1
+Victor Rangel: 1
+Walter Schachner: 1
+Willy van de Kerkhof: 1
+Zico: 1
